@@ -1,4 +1,4 @@
-﻿# ATD安装说明-对接操作文档
+﻿# 【示例】ATD安装说明-对接操作文档
 
 ---
 
@@ -48,7 +48,7 @@ enabled=1
 ```
 # vim /etc/hosts
 
-123.59.102.46 bgp-beijing-beijing-1-123-59-102-46
+10.199.204.94 bjs0-vq6-v
 
 ```
 ## 2、安装和配置kafka客户端
@@ -62,7 +62,7 @@ enabled=1
 
 验证kafka client和server端通信是否正常, 输出有相关topic信息：
 ```
-# yum install supervisor
+# /usr/local/bsc/kafkacat/bin/kafkacat -L -b bjs0-vq6-v:6667
 
 ```
 ### 2.2、配置kafkacat收集日志
@@ -78,9 +78,7 @@ enabled=1
 ```
 [program:kafkacat]
 
-command=sh -c "tail -F -q
-
-/data/nginx_logs/xhw.json.log|/usr/local/bsc/kafkacat/bin/kafkacat -b bgp-beijing-beijing-1-123-59-102-46:6667 -t juhe-haihang;sleep 10"
+command=sh -c "tail -F -q /data/nginx_logs/xhw.json.log|/usr/local/bsc/kafkacat/bin/kafkacat -b bjs0-vq6-v:6667 -t juhe-log;sleep 10"
 
 autostart = true
 
@@ -168,7 +166,7 @@ $ yum install salt-minion
 
 修改/etc/salt/minion配置文件，添加如下信息：
 ```
-master: 123.59.102.46
+master: 10.143.119.104
 id: ip
 ```
 > 备注：id的value为本机内网ip即可
