@@ -24,17 +24,18 @@ wget http://bsc-juhe:6WY07AXDsI=@mirrors.juhe.baishancloud.com/repo/push_log.sh 
 运行脚本的执行命令格式为：
 
 ```
-bash pushlog.sh {ATD机器ip} {ATD机器hostname} {日志服务器将要传送的日志1} {日志服务器将要传送的日志2}  
+bash pushlog.sh {ATD机器ip1,ATD机器ip2,...} {ATD机器hostname1,ATD机器hostname2,...} {日志服务器将要传送的日志1,日志服务器将要传送的日志2,...} 
 ```
 
 > 说明：<br/>
 > 1、在执行脚本之前，需要获取三个变量参数：ATD机器ip，ATD机器hostname，日志服务器将要传送的日志；<br/>
-> 2、如有多个日志文件且无法用正则匹配，可以在第三个参数后继续添加，以空格分隔;
+> 2、如有多个ip、hostname和日志文件，可以在相应的参数位置以 , 分隔；<br/>
+> 3、多个ip和hostname的情况时，先后顺序要一一对应；
 
 该日志格式的一键推送脚本执行命令（示例）为：
 
 ```
-bash push_log 123.59.102.46 bgp-beijing-beijing-1-123-59-102-46 /var/log/nginx/*.log /etc/log/*.log
+bash push_log 123.59.102.46,123.59.102.47 bgp-beijing-123-59-102-46,bgp-beijing-123-59-102-47 /var/log/nginx/*.log,/etc/log/*.log
 
 ```
 
