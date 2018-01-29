@@ -164,7 +164,7 @@ $ yum install bsc-fw-agent-extension
 ```
 [program:fw-agent]
 
-command=/usr/local/bsc/bsc-fw-agent-extension/bin/fw-agent 0 cc
+command=/usr/local/bsc/fw-agent-extension/bin/fw-agent 0 cc
 
 autostart = true
 
