@@ -30,7 +30,8 @@ bash pushlog.sh {ATD机器ip1,ATD机器ip2,...} {ATD机器hostname1,ATD机器hos
 > 说明：<br/>
 > 1、在执行脚本之前，需要获取三个变量参数：ATD机器ip，ATD机器hostname，日志服务器将要传送的日志；<br/>
 > 2、如有多个ip、hostname和日志文件，可以在相应的参数位置以 , 分隔；<br/>
-> 3、多个ip和hostname的情况时，先后顺序要一一对应；
+> 3、多个ip和hostname的情况时，先后顺序要一一对应；<br/>
+> 4、所有操作均在webserver或日志服务器上进行；
 
 该日志格式的一键推送脚本执行命令（示例）为：
 
