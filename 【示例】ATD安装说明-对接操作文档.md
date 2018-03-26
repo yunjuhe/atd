@@ -21,7 +21,7 @@ wget http://bsc-juhe:6WY07AXDsI=@mirrors.juhe.baishancloud.com/repo/push_log.sh 
 
 **2、修改脚本中对kafka topic的指定**
 
-执行以下命令即可完成脚本的全局替换：
+执行以下命令：
 
 ```
 sed -i 's/juhe-log/juhe-test/g' push_log.sh
