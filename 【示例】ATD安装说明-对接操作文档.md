@@ -19,7 +19,18 @@ ATD提供了一键推送日志的脚本，在进行一键推送操作时，第�
 wget http://bsc-juhe:6WY07AXDsI=@mirrors.juhe.baishancloud.com/repo/push_log.sh -O ./push_log.sh
 ```
 
-**2、运行脚本**
+**2、修改脚本中对kafka topic的指定**
+
+执行以下命令即可完成脚本的全局替换：
+
+```
+sed -i 's/juhe-log/juhe-test/g' push_log.sh
+```
+
+> 说明：<br/>
+> 其中juhe-test是变量，是日志格式对应的TopicName。
+
+**3、运行脚本**
 
 运行脚本的执行命令格式为：
 
