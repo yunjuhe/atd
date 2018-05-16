@@ -138,7 +138,7 @@ files = supervisord.d/*.ini
 参考官方文档：
 https://www.elastic.co/guide/en/beats/filebeat/master/configuring-howto-filebeat.html
 
-安装拦截器文档：
+安装拦截器文档：<br/>
 （1）[安装拦截器文档（适于Redhat/Centos）][7]<br/>
 （2）[安装拦截器文档（适于Ubuntu）][8]<br/>
 
