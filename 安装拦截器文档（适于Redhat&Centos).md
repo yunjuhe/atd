@@ -6,7 +6,8 @@
 >  针对安装拦截器，Redhat/Centos和Ubuntu略有不同：
 > <br/>
 > （1）[通过kafkacat给kafka推送日志][1]<br/>
-> （2）[安装拦截器文档（适于Ubuntu)][2]<br/>
+> （2）[通过filebeat给kafka推送日志][2]<br/>
+> （3）[通过rsyslog给kafka推送日志][3]<br/>
 
 ## 以下是安装拦截器（适于Redhat/Centos)的操作文档：
 
