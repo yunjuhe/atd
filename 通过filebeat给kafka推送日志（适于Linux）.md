@@ -97,7 +97,8 @@ output.kafka:
 3）hosts为kafka-server的地址，格式为"ATD机器hostname:kafk-server的端口号"。<br/>
 4）topic为kafka-server接受相应日志的topic。<br/>
 
-- 完成filebeat配置文件的编辑操作后，重启filebeat：<br/>
+- 完成filebeat配置文件的编辑操作后，重启filebeat：
+<br/><br/>
 centos6:
 
         /etc/init.d/filebeat restart
