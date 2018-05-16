@@ -183,7 +183,6 @@ kafkacat          RUNNING    pid 17176, uptime 4 days, 16:30:51
 查看推送日志的机器到kafka机器的网络是否连通：
 # telnet 192.168.0.89 6667
 
-查看rsyslog日志，看是否有相关报错
 ```
 （3）supervisor启动失败：
 在`/etc/supervisord.conf`文件中查看是否有以下内容，如果没有，请添加。
