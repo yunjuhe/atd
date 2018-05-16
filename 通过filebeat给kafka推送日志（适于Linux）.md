@@ -91,11 +91,11 @@ output.kafka:
         string: '%{[message]}'
 ```
 
-- 注意：
-1）paths为本地文件的路径，支持多个文件的导入，支持通配符，支持文件句柄释放后新的同名文件的句柄引入。
-2）version为目标kafka-server的版本，ATD机器默认的kafka-server版本为0.10.0 。
-3）hosts为kafka-server的地址，格式为"ATD机器hostname:kafk-server的端口号"。
-4）topic为kafka-server接受相应日志的topic。
+- 注意：<br/>
+1）paths为本地文件的路径，支持多个文件的导入，支持通配符，支持文件句柄释放后新的同名文件的句柄引入。<br/>
+2）version为目标kafka-server的版本，ATD机器默认的kafka-server版本为0.10.0 。<br/>
+3）hosts为kafka-server的地址，格式为"ATD机器hostname:kafk-server的端口号"。<br/>
+4）topic为kafka-server接受相应日志的topic。<br/>
 
 - 完成filebeat配置文件的编辑操作后，重启filebeat：
 centos6:
@@ -113,7 +113,7 @@ https://www.elastic.co/guide/en/beats/filebeat/master/configuring-howto-filebeat
 
 
   [1]: http://1.com
-  [2]: http://2.com
+  [2]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87filebeat%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
   [3]: http://3.com
   [4]: http://4.com
   [5]: http://5.com
