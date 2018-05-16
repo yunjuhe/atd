@@ -1,8 +1,14 @@
-﻿# 安装拦截器文档（适用于linux redhat/centos)
-
-标签（空格分隔）： 未分类
+﻿# 安装拦截器文档（适于Redhat/Centos)
 
 ---
+
+### 说明：
+>  针对安装拦截器，Redhat/Centos和Ubuntu略有不同：
+> <br/>
+> （1）[安装拦截器文档（适于Redhat/Centos)][1]<br/>
+> （2）[安装拦截器文档（适于RUbuntu)][2]<br/>
+
+## 以下是安装拦截器（适于Redhat/Centos)的操作文档：
 
 ## 1. 添加yum repo
 centos/redhat 6/7使用如下yum源：
@@ -158,3 +164,7 @@ master:
 [include]
 files = supervisord.d/*.ini
 ```
+
+
+[1]: https://github.com/yunjuhe/atd/blob/master/%E5%AE%89%E8%A3%85%E6%8B%A6%E6%88%AA%E5%99%A8%E6%96%87%E6%A1%A3%EF%BC%88%E9%80%82%E4%BA%8ERedhat%26Centos).md
+[2]: https://github.com/yunjuhe/atd/blob/master/%E5%AE%89%E8%A3%85%E6%8B%A6%E6%88%AA%E5%99%A8%E6%96%87%E6%A1%A3%EF%BC%88%E9%80%82%E4%BA%8EUbuntu).md
