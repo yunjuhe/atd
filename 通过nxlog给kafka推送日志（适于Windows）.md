@@ -69,7 +69,7 @@ LogFile %ROOT%\data\nxlog.log
 # /usr/hdp/2.6.2.0-205/kafka/bin/kafka-console-consumer.sh --bootstrap-server $(hostname):6667 --topic juhe-1710116uSh
 ```
 
-（2）如果“（3）配置nxlog”步骤中没有消费到日志，则自查如下：
+（2）如果（1）步骤中没有消费到日志，则自查如下：
 
 ```
 查看推送日志的机器到kafka机器的网络是否连通：
