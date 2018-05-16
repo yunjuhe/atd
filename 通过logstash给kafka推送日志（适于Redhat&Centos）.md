@@ -1,4 +1,4 @@
-﻿# 通过logstash给kafka推送日志（适于Redhat/Centos）
+# 通过logstash给kafka推送日志（适于Redhat/Centos）
 
 ---
   ### 说明：
@@ -103,7 +103,7 @@ output{
 
 - 如果因为日志量过大而出现日志积压等情况，可以给logstash加`pipeline.workers`和 `pipeline.batch.size`，参数为在命令行中添加”`-w`”及”`-b`”，具体参考 `/usr/share/logstash/bin/logstash --help` 输出的结果。
 
-## 3、常见的问题及解决办法：
+## 4、常见的问题及解决办法：
 （1）确认是否有新产生的日志进入到kafka中：
 登陆到ATD部署机器192.168.0.89，消费对应kafka的topic数据，如果日志源有新日志产生且推送日志流程正常，使用如下命令能看到日志：
 ```
