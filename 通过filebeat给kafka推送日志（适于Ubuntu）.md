@@ -40,7 +40,7 @@ Escape character is '^]'.
 # curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.2.4-amd64.deb
 # sudo dpkg -i filebeat-6.2.4-amd64.deb
 ```
-## 3、配置filebeat（标红色的/tmp/1.log应修改为要推送日志的路径）
+## 3、配置filebeat（/tmp/1.log应修改为要推送日志的路径）
  编辑`/etc/filebeat/filebeat.yml`文件：
 
 ```
