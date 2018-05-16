@@ -7,6 +7,7 @@
 > （1）[安装拦截器（适于Redhat/Centos)操作文档][1]<br/>
 > （2）[安装拦截器（适于Ubuntu)操作文档][2]<br/>
 
+## 以下是安装拦截器（适于Ubuntu)的操作文档：
 
 ## 1、安装软件
 - 官方文档：http://mirrors.nju.edu.cn/saltstack/2016.3.html
