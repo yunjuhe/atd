@@ -1,10 +1,10 @@
-﻿# 通过logstash给kafka推送日志（适于Linux）
+﻿# 通过logstash给kafka推送日志（适于Redhat/Centos）
 
 ---
 ### 说明：
 >  1、ATD支持多种给kafka推送日志的方式<br/>
 > <br/>
-> 针对Linux系统（redhat、centos）支持如下方式（按推荐顺序排列）：<br/>
+> 针对Redhat、Centos支持如下方式（按推荐顺序排列）：<br/>
 > （1）[通过kafkacat给kafka推送日志][1]<br/>
 > （2）[通过filebeat给kafka推送日志][2]<br/>
 > （3）[通过rsyslog给kafka推送日志][3]<br/>
