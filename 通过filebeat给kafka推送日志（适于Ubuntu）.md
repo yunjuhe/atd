@@ -76,6 +76,26 @@ output.kafka:
 # /etc/init.d/filebeat start
 ```
 
+## 5、常见的问题及解决办法：
+（1）确认是否有新产生的日志进入到kafka中：
+登陆到ATD部署机器192.168.0.89，消费对应kafka的topic数据，如果日志源有新日志产生且推送日志流程正常，使用如下命令能看到日志：
+```
+# /usr/hdp/2.6.2.0-205/kafka/bin/kafka-console-consumer.sh --bootstrap-server $(hostname):6667 --topic juhe-1710116uSh
+```
+（2）如果（1）步骤中没有消费到日志，则自查如下：
+```
+查看推送日志的机器到kafka机器的网络是否连通：
+# telnet 192.168.0.89 6667
+
+查看filebeat日志，看是否有相关报错
+```
+（3）supervisor启动失败：
+在`/etc/supervisord.conf`文件中查看是否有以下内容，如果没有，请添加。
+```
+[include]
+files = supervisord.d/*.ini
+```
+
 ## 快速链接
 
 安装拦截器文档：<br/>
