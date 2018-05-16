@@ -17,12 +17,13 @@
 
 ## 以下是通过nxlog给kafka推送日志的操作文档（适于Windows）：
 
-##1，windows下nxlog安装和配置
-（1）下载nxlog，用来在windows下推送日志，此agent属于开源产品，广泛应用于windows系统
-下载页面：https://nxlog.co/products/nxlog-community-edition/download
-（2）在windows下双击如上下载的msi文件进行nxlog的安装
-（3）配置nxlog
+## 1，windows下nxlog安装和配置
+（1）下载nxlog，用来在windows下推送日志，此agent属于开源产品，广泛应用于windows系统<br/>
+下载页面：https://nxlog.co/products/nxlog-community-edition/download<br/>
+（2）在windows下双击如上下载的msi文件进行nxlog的安装<br/>
+（3）配置nxlog<br/>
 nxlog默认配置文件位置在：C:\Program Files (x86)\nxlog\conf，我们打开配置文件nxlog.conf,更改成如下配置（如果我们日志文件的目录为C:\test目录，请将目录改成自己的日志目录）：
+
 ```
 ###
 define ROOT C:\Program Files (x86)\nxlog
@@ -59,13 +60,17 @@ LogFile %ROOT%\data\nxlog.log
 ```
 （4）启动或者重启nxlog
 右键我的电脑->管理->服务和应用程序->服务，然后查找名称为nxlog的服务，点击右键选择启动或者停止服务
-##3，常见的问题及解决办法：
+
+## 3，常见的问题及解决办法：
 （1）确认是否有新产生的日志进入到kafka中：
 登陆到ATD部署机器192.168.0.89，消费对应kafka的topic数据，如果日志源有新日志产生且推送日志流程正常，使用如下命令能看到日志：
+
 ```
 # /usr/hdp/2.6.2.0-205/kafka/bin/kafka-console-consumer.sh --bootstrap-server $(hostname):6667 --topic juhe-1710116uSh
 ```
+
 （2）如果（3）步骤中没有消费到日志，则自查如下：
+
 ```
 查看推送日志的机器到kafka机器的网络是否连通：
 # telnet 192.168.0.89 6667
@@ -73,8 +78,9 @@ LogFile %ROOT%\data\nxlog.log
 查看nxlog日志(默认位置在C:\Program Files (x86)\nxlog\data\nxlog.log)，看是否有相关报错
 ```
 
-  [1]: http://1.com
-  [2]: http://2.com
-  [3]: http://3.com
-  [4]: http://4.com
-  [5]: http://5.com
+
+  [1]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87kafkacat%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [2]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87filebeat%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [3]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87rsyslog%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [4]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87logstash%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [5]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87nxlog%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8EWindows%EF%BC%89.md
