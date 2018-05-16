@@ -19,17 +19,21 @@
 
 # 1.下载filebeat-5.6:
 
-- 配置yum源，编辑`/etc/yum.repos.d/filebeat-5.x.repo`文件：
+- 配置yum源，编辑`/etc/yum.repos.d/bsc-juhe.repo`文件：
 
 ```
-[filebeat-5.x]
-name=Elastic repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
-gpgcheck=1
-gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+[bsc-juhe]
+
+name=juhe
+
+baseurl=http://bsc-juhe:6WY07AXDsI=@mirrors.juhe.baishancloud.com/repo/bsc/el$releasever/$basearch/
+
+gpgcheck=0
+
 enabled=1
-autorefresh=1
-type=rpm-md
+
+
 ```
 
 - 编辑完成后清除一下缓存:
@@ -106,8 +110,25 @@ centos7:
 
         systemctl restart filebeat
 
+## 3、常见的问题及解决办法：
+（1）确认是否有新产生的日志进入到kafka中：
+登陆到ATD部署机器192.168.0.89，消费对应kafka的topic数据，如果日志源有新日志产生且推送日志流程正常，使用如下命令能看到日志：
+```
+# /usr/hdp/2.6.2.0-205/kafka/bin/kafka-console-consumer.sh --bootstrap-server $(hostname):6667 --topic juhe-1710116uSh
+```
+（2）如果（1）步骤中没有消费到日志，则自查如下：
+```
+查看推送日志的机器到kafka机器的网络是否连通：
+# telnet 192.168.0.89 6667
 
-
+查看rsyslog日志，看是否有相关报错
+```
+（3）supervisor启动失败：
+在`/etc/supervisord.conf`文件中查看是否有以下内容，如果没有，请添加。
+```
+[include]
+files = supervisord.d/*.ini
+```
 
 - 参考官方文档：
 https://www.elastic.co/guide/en/beats/filebeat/master/configuring-howto-filebeat.html
