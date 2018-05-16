@@ -1,0 +1,80 @@
+﻿
+#通过nxlog给kafka推送日志（适于Windows）
+----
+### 说明：
+>  1、ATD支持多种给kafka推送日志的方式<br/>
+> <br/>
+> 针对Linux系统支持如下方式（按推荐顺序排列）：<br/>
+> （1）[通过kafkacat给kafka推送日志][1]<br/>
+> （2）[通过filebeat给kafka推送日志][2]<br/>
+> （3）[通过rsyslog给kafka推送日志][3]<br/>
+> （4）[通过logstash给kafka推送日志][4]<br/>
+> <br/>
+> 针对Windows系统支持如下方式：<br/>
+> （1）[通过nxlog给kafka推送日志][5]<br/>
+> <br/>
+> 2、注意：您需要将日志推送到kafka相应的TopicName中，但是，请勿将不同格式的域名日志推到同一个TopicName下，否则ATD将无法完成日志解析。<br/>
+
+## 以下是通过nxlog给kafka推送日志的操作文档（适于Windows）：
+
+##1，windows下nxlog安装和配置
+（1）下载nxlog，用来在windows下推送日志，此agent属于开源产品，广泛应用于windows系统
+下载页面：https://nxlog.co/products/nxlog-community-edition/download
+（2）在windows下双击如上下载的msi文件进行nxlog的安装
+（3）配置nxlog
+nxlog默认配置文件位置在：C:\Program Files (x86)\nxlog\conf，我们打开配置文件nxlog.conf,更改成如下配置（如果我们日志文件的目录为C:\test目录，请将目录改成自己的日志目录）：
+```
+###
+define ROOT C:\Program Files (x86)\nxlog
+
+Moduledir %ROOT%\modules
+CacheDir %ROOT%\data
+Pidfile %ROOT%\data\nxlog.pid
+SpoolDir %ROOT%\data
+LogFile %ROOT%\data\nxlog.log
+
+<Extension _syslog>
+    Module      xm_syslog
+</Extension>
+
+<Input in>
+    Module im_file
+    File "C:\\test\\\*.log"
+    SavePos TRUE
+    PollInterval 1
+    ReadFromLast TRUE
+    Exec   $SyslogFacility = "local1"; $SyslogSeverity = "ALERT";
+</Input>
+
+<Output out>
+    Module      om_udp
+    Host        192.168.0.89
+    Port        514
+    Exec to_syslog_bsd();
+</Output>
+
+<Route 1>
+    Path        in => out
+</Route>
+```
+（4）启动或者重启nxlog
+右键我的电脑->管理->服务和应用程序->服务，然后查找名称为nxlog的服务，点击右键选择启动或者停止服务
+##3，常见的问题及解决办法：
+（1）确认是否有新产生的日志进入到kafka中：
+登陆到ATD部署机器192.168.0.89，消费对应kafka的topic数据，如果日志源有新日志产生且推送日志流程正常，使用如下命令能看到日志：
+```
+# /usr/hdp/2.6.2.0-205/kafka/bin/kafka-console-consumer.sh --bootstrap-server $(hostname):6667 --topic juhe-1710116uSh
+```
+（2）如果（3）步骤中没有消费到日志，则自查如下：
+```
+查看推送日志的机器到kafka机器的网络是否连通：
+# telnet 192.168.0.89 6667
+
+查看nxlog日志(默认位置在C:\Program Files (x86)\nxlog\data\nxlog.log)，看是否有相关报错
+```
+
+  [1]: http://1.com
+  [2]: http://2.com
+  [3]: http://3.com
+  [4]: http://4.com
+  [5]: http://5.com
