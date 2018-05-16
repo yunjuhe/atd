@@ -61,7 +61,7 @@ LogFile %ROOT%\data\nxlog.log
 （4）启动或者重启nxlog
 右键我的电脑->管理->服务和应用程序->服务，然后查找名称为nxlog的服务，点击右键选择启动或者停止服务
 
-## 3，常见的问题及解决办法：
+## 2，常见的问题及解决办法：
 （1）确认是否有新产生的日志进入到kafka中：
 登陆到ATD部署机器192.168.0.89，消费对应kafka的topic数据，如果日志源有新日志产生且推送日志流程正常，使用如下命令能看到日志：
 
@@ -69,7 +69,7 @@ LogFile %ROOT%\data\nxlog.log
 # /usr/hdp/2.6.2.0-205/kafka/bin/kafka-console-consumer.sh --bootstrap-server $(hostname):6667 --topic juhe-1710116uSh
 ```
 
-（2）如果（3）步骤中没有消费到日志，则自查如下：
+（2）如果“（3）配置nxlog”步骤中没有消费到日志，则自查如下：
 
 ```
 查看推送日志的机器到kafka机器的网络是否连通：
