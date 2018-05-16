@@ -81,10 +81,10 @@ output{
 }
 ```
 
-- 注意：
-1）paths为本地文件的路径，支持多个文件的导入，支持通配符，支持文件句柄释放后新的同名文件的句柄引入。
-2）bootstrap_servers为kafka-server的地址，格式为”ATD机器hostname:kafk-server的端口号”。
-3）以上两个参数都可以设置多个，例：
+- 注意：<br/>
+1）paths为本地文件的路径，支持多个文件的导入，支持通配符，支持文件句柄释放后新的同名文件的句柄引入。<br/>
+2）bootstrap_servers为kafka-server的地址，格式为”ATD机器hostname:kafk-server的端口号”。<br/>
+3）以上两个参数都可以设置多个，例：<br/>
 
         path => [“/tmp/*.log”, ”/tmp/2.log.b”]
         bootstrap_servers => [“kafka1:6667”, “kafka2:6667”, “kafka3:6667”]
@@ -103,9 +103,10 @@ output{
 https://www.elastic.co/guide/en/logstash/5.6/configuration.html
 
 
-  [1]: http://1.com
-  [2]: http://2.com
-  [3]: http://3.com
-  [4]: http://4.com
-  [5]: http://5.com
+
+  [1]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87kafkacat%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [2]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87filebeat%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [3]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87rsyslog%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [4]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87logstash%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8ELinux%EF%BC%89.md
+  [5]: https://github.com/yunjuhe/atd/blob/master/%E9%80%9A%E8%BF%87nxlog%E7%BB%99kafka%E6%8E%A8%E9%80%81%E6%97%A5%E5%BF%97%EF%BC%88%E9%80%82%E4%BA%8EWindows%EF%BC%89.md
 
