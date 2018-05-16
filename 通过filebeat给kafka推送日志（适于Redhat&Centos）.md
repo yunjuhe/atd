@@ -18,7 +18,7 @@
 > <br/>
 > 2、注意：您需要将日志推送到kafka相应的TopicName中，但是，请勿将不同格式的域名日志推到同一个TopicName下，否则ATD将无法完成日志解析。<br/>
 
-## 以下是通过filebeat给kafka推送日志的操作文档（适于Linux）：
+## 以下是通过filebeat给kafka推送日志的操作文档（适于Redhat/Centos）：
 
 # 1.下载filebeat-5.6:
 
