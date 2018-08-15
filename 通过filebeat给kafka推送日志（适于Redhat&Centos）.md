@@ -82,6 +82,8 @@ filebeat.prospectors:
     - /tmp/1.log
     - /tmp/2.log
     - /tmp/*.log.b
+    
+  tail_files: true
 
 #================================ Outputs =====================================
 output.kafka:
