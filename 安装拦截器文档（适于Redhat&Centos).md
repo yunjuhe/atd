@@ -94,10 +94,8 @@ $ yum install salt-minion
 修改/etc/salt/minion配置文件，添加如下信息：
 ```
 master: 10.143.119.104
-id: ip（id的value为本机内网ip即可）
+id: ip（本机内网ip）
 ```
-> 备注：id的value为本机内网ip即可
-
 启动salt minion并查看运行状态
 ```
 #CentOS 6版本上如下操作：
