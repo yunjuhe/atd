@@ -133,7 +133,7 @@ master:
 ```
 
 ## 3，常见的问题及解决办法：
- （1） 网络连通性测试，测试与atd机器的salt-maste是否连通：
+ （1） 网络连通性测试，测试与atd机器的salt-master是否连通：
  
 ```
  $ telnet ATD1 4506
