@@ -11,33 +11,9 @@
 ## 以下是安装拦截器（适于Redhat/Centos)的操作文档：
 
 ## 1. 添加yum repo
-centos/redhat 6/7使用如下yum源：
+centos/redhat 6/7使用如下yum源：（请联系白山工程师获取）
 
 
-```
-# vim /etc/yum.repos.d/bsc-juhe.repo
-
-[bsc-juhe]
-
-name=juhe
-
-baseurl=http://bsc-juhe:6WY07AXDsI=@mirrors.juhe.baishancloud.com/repo/bsc/el$releasever/$basearch/
-
-gpgcheck=0
-
-enabled=1
-
-[bsc-juhe-salt]
-
-name=juhe
-
-baseurl=http://bsc-juhe:6WY07AXDsI=@mirrors.juhe.baishancloud.com/repo/salt/el$releasever/$basearch/
-
-gpgcheck=0
-
-enabled=1
-
-```
 ## 2. 安装拦截器扩展
 安装supervisor，用supervisor管理kafkacat进程:
 
